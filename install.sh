@@ -35,6 +35,11 @@ if [ ! -n "$ZSH" ]; then
   ZSH=~/.oh-my-zsh
 fi
 
+
+if [ ! -n "$ZSH_CUSTOM" ]; then
+  ZSH_CUSTOM=~/.oh-my-zsh/custom
+fi
+
 if [ ! -d "$ZSH" ]; then
   printf "You may not install ${YELLOW}[Oh-My-Zsh]${NORMAL}.\n"
   printf "You need to install it first.\n"
@@ -46,22 +51,27 @@ fi
 # install start
 echo 'install start...'
 
-if [ ! -d $ZSH/custom/plugins/zsh-syntax-highlighting ]; then
-  echo '+ install zsh-syntax-highlighting'
-  git clone git://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH/custom/plugins/zsh-syntax-highlighting
+if [ ! -d $ZSH_CUSTOM/plugins/zsh-syntax-highlighting ]; then
+  echo ' + [plugins]install: zsh-syntax-highlighting'
+  git clone git://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 fi
 
-echo ' + install sen.zshenv.zsh...'
-cp $(PWD)/sen.zshenv.zsh $ZSH/custom/
+echo ' + [plugins]install: themes'
+cp -rf plugins/themes $ZSH_CUSTOM/plugins/
+
+echo ' + install: sen.zshenv.zsh...'
+cp $(PWD)/sen.zshenv.zsh $ZSH_CUSTOM
 
 #echo ' + install sen.zshrc.zsh...'
 #cp $(PWD)/sen.zshrc.zsh $ZSH/custom/
 
 ## install theme
-echo ' + install sen.zsh-theme...'
-if [ ! -d $ZSH/custom/themes ]; then
-  mkdir $ZSH/custom/themes
+echo ' + install: sen.zsh-theme...'
+if [ ! -d $ZSH_CUSTOM/themes ]; then
+  mkdir $ZSH_CUSTOM/themes
 fi
 
-cp $(PWD)/sen_cyg.zsh-theme $ZSH/custom/themes
+cp $(PWD)/sen_cyg.zsh-theme $ZSH_CUSTOM/themes
+
+# ********************************************************************
 echo 'done.'
