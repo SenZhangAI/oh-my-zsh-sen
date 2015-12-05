@@ -22,10 +22,11 @@ alias du='du -hs'
 case $OSTYPE {
     cygwin*)
         ZSH_THEME="ys"
-        plugins=(git z vi-mode zsh-syntax-highlighting);;
+        # if use zsh-syntax-highlighting, it MUST be the last plugin sourced
+        plugins=(git z vi-mode);;
     linux*)
         ZSH_THEME="gentoo"
-        plugins=(git);;
+        plugins=(git z vi-mode zsh-syntax-highlighting);;
     darwin*)
         ZSH_THEME="ys"
         plugins=(git osx ruby brew);;
