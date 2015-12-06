@@ -18,6 +18,10 @@ fi
 alias vi='vim'
 alias df='df -h'
 alias du='du -hs'
+alias -s gz='tar -xzvf'
+alias -s tgz='tar -xzvf'
+alias -s bz2='tar -xjvf'
+alias -s zip='unzip'
 
 # plugins should be modified in [.zshrc]
 # because this file is sourced after all plugins sourced.

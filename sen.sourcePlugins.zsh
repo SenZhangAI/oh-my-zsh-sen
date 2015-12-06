@@ -16,7 +16,7 @@
 #    This is caused by custom.zsh is sourced after plugins were
 #    sourced in [oh-my-zsh.sh] (version 5.1.1)
 #
-#    That's not that convinient for but there is no better way.
+#    That's not that convenient for but there is no better way.
 #
 #    If I try to source the plugins again in this file
 #    There are two disadvantage:
