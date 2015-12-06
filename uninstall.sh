@@ -13,13 +13,15 @@ fi
 
 echo 'uninstall start...'
 
-echo ' - [plugins]remove: themes'
+echo ' - [plugin]remove: themes'
 rm -rf $ZSH_CUSTOM/plugins/themes
 
-echo ' - remove: sen.zshenv.zsh...'
+echo ' - [config]: sen.zshenv.zsh...'
 rm $ZSH_CUSTOM/sen.zshenv.zsh
+
 #echo ' - remove sen.zshrc.zsh...'
 #rm $ZSH_CUSTOM/sen.zshrc.zsh
-echo ' - remove: sen.zsh-theme...'
+
+echo ' - [theme]: sen_cyg.zsh-theme...'
 rm $ZSH_CUSTOM/themes/sen_cyg.zsh-theme
 echo 'done.'

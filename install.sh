@@ -52,21 +52,21 @@ fi
 echo 'install start...'
 
 if [ ! -d $ZSH_CUSTOM/plugins/zsh-syntax-highlighting ]; then
-  echo ' + [plugins]install: zsh-syntax-highlighting'
+  echo ' + [plugin]: zsh-syntax-highlighting'
   git clone git://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 fi
 
-echo ' + [plugins]install: themes'
+echo ' + [plugin]: themes'
 cp -rf plugins/themes $ZSH_CUSTOM/plugins/
 
-echo ' + install: sen.zshenv.zsh...'
+echo ' + [config]: sen.zshenv.zsh...'
 cp $(PWD)/sen.zshenv.zsh $ZSH_CUSTOM
 
 #echo ' + install sen.zshrc.zsh...'
 #cp $(PWD)/sen.zshrc.zsh $ZSH/custom/
 
 ## install theme
-echo ' + install: sen.zsh-theme...'
+echo ' + [theme]: sen.zsh-theme...'
 if [ ! -d $ZSH_CUSTOM/themes ]; then
   mkdir $ZSH_CUSTOM/themes
 fi
@@ -75,3 +75,4 @@ cp $(PWD)/sen_cyg.zsh-theme $ZSH_CUSTOM/themes
 
 # ********************************************************************
 echo 'done.'
+echo 'ATTENTION: the plugins you need should be modified in .zshrc'

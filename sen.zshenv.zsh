@@ -9,9 +9,9 @@
 
 #Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-    export EDITOR='vim'
+  export EDITOR='vim'
 else
-    export EDITOR='mvim'
+  export EDITOR='mvim'
 fi
 
 #alias
@@ -19,16 +19,19 @@ alias vi='vim'
 alias df='df -h'
 alias du='du -hs'
 
+# plugins should be modified in [.zshrc]
+# because this file is sourced after all plugins sourced.
+# more details are discirbed in sen.sourcePlugins.zsh
 case $OSTYPE {
-    cygwin*)
-        ZSH_THEME="ys"
-        # if use zsh-syntax-highlighting, it MUST be the last plugin sourced
-        plugins=(git z vi-mode);;
-    linux*)
-        ZSH_THEME="gentoo"
-        plugins=(git z vi-mode zsh-syntax-highlighting);;
-    darwin*)
-        ZSH_THEME="ys"
-        plugins=(git osx ruby brew);;
-}
+  cygwin*)
+    ZSH_THEME="ys";;
+    # if use zsh-syntax-highlighting, it MUST be the last plugin sourced
+    #plugins=(git z vi-mode);;
+  linux*)
+    ZSH_THEME="gentoo";;
+    #plugins=(git z vi-mode zsh-syntax-highlighting);;
+  darwin*)
+    ZSH_THEME="ys";;
+    #plugins=(git osx ruby brew);;
+  }
 

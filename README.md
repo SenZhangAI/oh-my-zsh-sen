@@ -6,7 +6,7 @@ Thanks to the origin author!
 
 Base Themes is wedisagree.
 
-### Setup
+### Install
 ----------------
 
 1. install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
@@ -19,5 +19,19 @@ Base Themes is wedisagree.
 
 5. `./install.sh`
 
-6. `source ~/.zshrc`
+6. add plugins by modify the `~/.zshrc`, for example:
 
+```bash
+#plugins=(git) #the original config
+plugins=(git z vi-mode zsh-syntax-highlighting)
+```
+
+7. `source ~/.zshrc`
+
+### uninstall
+----------------
+1. `cd oh-my-zsh-sen`
+
+2. `./uninstall.sh`
+
+3. delete plugins related in `~/.zshrc`
