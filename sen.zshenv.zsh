@@ -18,6 +18,7 @@ fi
 alias vi='vim'
 alias df='df -h'
 alias du='du -hs'
+alias ps='ps -ef'
 alias -s gz='tar -xzvf'
 alias -s tgz='tar -xzvf'
 alias -s bz2='tar -xjvf'
