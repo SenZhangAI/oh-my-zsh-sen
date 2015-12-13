@@ -29,6 +29,10 @@ alias -s zip='unzip'
 # more details are discirbed in sen.sourcePlugins.zsh
 case $OSTYPE {
   cygwin*)
+    # start gdb
+    export CYGWIN="$CYGWIN error_start=gdb -nw %1 %2"
+    # generate core dump
+    export CYGWIN="$CYGWIN error_start=dumper -d %1 %2"
     ZSH_THEME="ys";;
     # if use zsh-syntax-highlighting, it MUST be the last plugin sourced
     #plugins=(git z vi-mode);;
