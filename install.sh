@@ -75,4 +75,5 @@ cp $(PWD)/sen_cyg.zsh-theme $ZSH_CUSTOM/themes
 
 # ********************************************************************
 echo 'done.'
-echo 'ATTENTION: the plugins you need should be modified in .zshrc'
+echo 'ATTENTION: If you want to add/delete any plugin for oh-my-zsh,'
+echo '           You should modify $plugins in [.zshrc]'
