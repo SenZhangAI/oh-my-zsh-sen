@@ -46,7 +46,8 @@ if [ ! -d "$ZSH" ]; then
   exit
 fi
 
-
+# get INSTALLER_DIR
+INSTALLER_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 # ********************************************************************
 # install start
 echo 'install start...'
@@ -60,10 +61,10 @@ echo ' + [plugin]: themes'
 cp -rf plugins/themes $ZSH_CUSTOM/plugins/
 
 echo ' + [config]: sen.zshenv.zsh...'
-cp $(PWD)/sen.zshenv.zsh $ZSH_CUSTOM
+cp $INSTALLER_DIR/sen.zshenv.zsh $ZSH_CUSTOM
 
 #echo ' + install sen.zshrc.zsh...'
-#cp $(PWD)/sen.zshrc.zsh $ZSH/custom/
+#cp $INSTALLER_DIR/sen.zshrc.zsh $ZSH/custom/
 
 ## install theme
 echo ' + [theme]: sen.zsh-theme...'
@@ -71,7 +72,7 @@ if [ ! -d $ZSH_CUSTOM/themes ]; then
   mkdir $ZSH_CUSTOM/themes
 fi
 
-cp $(PWD)/sen_cyg.zsh-theme $ZSH_CUSTOM/themes
+cp $INSTALLER_DIR/sen_cyg.zsh-theme $ZSH_CUSTOM/themes
 
 # ********************************************************************
 echo 'done.'
