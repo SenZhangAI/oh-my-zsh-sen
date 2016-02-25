@@ -21,6 +21,7 @@ alias du='du -hs'
 alias ps='ps -ef'
 #@see <http://blog.chinaunix.net/uid-11640640-id-2139790.html>
 alias ctagsCpp='ctags -R --languages=c++ --c++-kinds=+px --fields=+aiKSz --extra=+fq'
+alias cscopeRbq='cscope -Rbq'
 alias -s gz='tar -xzvf'
 alias -s tgz='tar -xzvf'
 alias -s bz2='tar -xjvf'
@@ -31,18 +32,18 @@ alias -s zip='unzip'
 # more details are discirbed in sen.sourcePlugins.zsh
 case $OSTYPE {
   cygwin*)
+    # change cursor to blinking block
+    echo -ne "\x1b[1 q"
     # start gdb
     export CYGWIN="$CYGWIN error_start=gdb -nw %1 %2"
     # generate core dump
     export CYGWIN="$CYGWIN error_start=dumper -d %1 %2"
     ZSH_THEME="ys";;
     # if use zsh-syntax-highlighting, it MUST be the last plugin sourced
+    # plugins MUST config in .zshrc
     #plugins=(git z vi-mode);;
   linux*)
-    ZSH_THEME="gentoo";;
-    #plugins=(git z vi-mode zsh-syntax-highlighting);;
+    ZSH_THEME="ys";;
   darwin*)
     ZSH_THEME="ys";;
-    #plugins=(git osx ruby brew);;
   }
-
