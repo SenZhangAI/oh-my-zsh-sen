@@ -22,6 +22,7 @@ alias ps='ps -ef'
 #@see <http://blog.chinaunix.net/uid-11640640-id-2139790.html>
 alias ctagsCpp='ctags -R --languages=c++ --c++-kinds=+px --fields=+aiKSz --extra=+fq'
 alias cscopeRbq='cscope -Rbq'
+alias astyleCpp='astyle --mode=c --style=java -t -xW -xC120 -xL -NOowypcfHU -k1'
 alias -s gz='tar -xzvf'
 alias -s tgz='tar -xzvf'
 alias -s bz2='tar -xjvf'
