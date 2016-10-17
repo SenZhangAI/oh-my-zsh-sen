@@ -44,7 +44,7 @@ case $OSTYPE {
     # plugins MUST config in .zshrc
     #plugins=(git z vi-mode);;
   linux*)
-    ZSH_THEME="ys";;
+    ZSH_THEME="robbyrussell";;
   darwin*)
     ZSH_THEME="ys";;
   }

@@ -78,3 +78,4 @@ cp $INSTALLER_DIR/sen_cyg.zsh-theme $ZSH_CUSTOM/themes
 echo 'done.'
 echo 'ATTENTION: If you want to add/delete any plugin for oh-my-zsh,'
 echo '           You should modify $plugins in [.zshrc]'
+echo 'example: plugins=(git z vi-mode zsh-syntax-highlighting)'
