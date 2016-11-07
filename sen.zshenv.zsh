@@ -33,6 +33,8 @@ alias -s zip='unzip'
 # more details are discirbed in sen.sourcePlugins.zsh
 case $OSTYPE {
   cygwin*)
+    alias ep='explorer'
+
     # change cursor to blinking block
     echo -ne "\x1b[1 q"
     # start gdb
