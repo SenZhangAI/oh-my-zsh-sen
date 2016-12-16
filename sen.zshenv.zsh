@@ -39,6 +39,7 @@ case $OSTYPE {
     export PATH=$PATH:/cygdrive/c/Go/bin
     export GOPATH=d:\\Cygwin\\home\\Sen\\GoWorkSpace
     export GOBIN=d:\\Cygwin\\home\\Sen\\GoWorkSpace\\bin
+    export GOBINCyg=~/GoWorkSpace/bin
 
     # change cursor to blinking block
     echo -ne "\x1b[1 q"
