@@ -52,7 +52,7 @@ case $OSTYPE {
     # plugins MUST config in .zshrc
     #plugins=(git z vi-mode);;
   linux*)
-    ZSH_THEME="robbyrussell";;
+    ZSH_THEME="ys";;
   darwin*)
     ZSH_THEME="ys";;
   }
