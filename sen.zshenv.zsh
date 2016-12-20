@@ -57,7 +57,13 @@ case $OSTYPE {
     # plugins MUST config in .zshrc
     #plugins=(git z vi-mode);;
   linux*)
+    # Go environment
+    export PATH="$PATH:/usr/local/go/bin"
+    export GOPATH="$HOME/GoWorkSpace"
+    export GOBIN="$GOPATH/bin"
+
     ZSH_THEME="ys";;
+
   darwin*)
     ZSH_THEME="ys";;
   }
