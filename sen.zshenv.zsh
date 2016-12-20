@@ -28,6 +28,11 @@ alias -s tgz='tar -xzvf'
 alias -s bz2='tar -xjvf'
 alias -s zip='unzip'
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
 # plugins should be modified in [.zshrc]
 # because this file is sourced after all plugins sourced.
 # more details are discirbed in sen.sourcePlugins.zsh
