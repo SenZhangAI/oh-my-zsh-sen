@@ -59,8 +59,9 @@ case $OSTYPE {
   linux*)
     # Go environment
     export PATH="$PATH:/usr/local/go/bin"
-    export GOPATH="$HOME/GoWorkSpace"
+    export GOPATH="$HOME/GoWorkSpace:$HOME/GoProject"
     export GOBIN="$GOPATH/bin"
+    export PATH="$PATH:$GOPATH/bin"
 
     ZSH_THEME="ys";;
 
