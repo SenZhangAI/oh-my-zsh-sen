@@ -37,7 +37,7 @@ setopt hist_verify
 setopt hist_no_store
 
 # emacs keybind
-bindkey -e
+#bindkey -e
 
 # 先頭マッチのヒストリサーチ
 bindkey '^P' history-beginning-search-backward
@@ -54,7 +54,7 @@ bindkey '^S' history-incremental-pattern-search-forward
 ##
 
 # 補完候補リストの日本語を適正表示
-setopt print_eight_bit
+#setopt print_eight_bit
 
 ##
 ######## 補完関係設定 end ########
