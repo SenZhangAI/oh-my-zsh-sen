@@ -61,5 +61,10 @@ bindkey '^S' history-incremental-pattern-search-forward
 
 
 # cdの後に自動的にls -la
-function chpwd() { ls -la }
+#function chpwd() { ls -la }
+function chpwd() { ls }
 
+##
+######## Syntax Highlighting start ########
+# To disable highlighting of globbing expressions
+ZSH_HIGHLIGHT_STYLES[globbing]='none'

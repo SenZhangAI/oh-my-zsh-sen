@@ -63,7 +63,7 @@ cp -rf plugins/themes $ZSH_CUSTOM/plugins/
 echo ' + [config]: sen.zshenv.zsh...'
 cp $INSTALLER_DIR/sen.zshenv.zsh $ZSH_CUSTOM
 
-echo ' + install sen.zshrc.zsh...'
+echo ' + [config]: sen.zshrc.zsh...'
 cp $INSTALLER_DIR/sen.zshrc.zsh $ZSH_CUSTOM
 
 ## install theme
