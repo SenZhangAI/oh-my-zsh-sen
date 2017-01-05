@@ -42,6 +42,7 @@ case $OSTYPE {
 
     # Go environment
     export PATH=$PATH:/cygdrive/c/Go/bin
+    export GOPATH=$GOPATH:~/jubao
     #below settings need more test
     #export GOPATH=d:\\Cygwin\\home\\Sen\\GoWorkSpace
     #export GOBIN=d:\\Cygwin\\home\\Sen\\GoWorkSpace\\bin

@@ -19,8 +19,8 @@ rm -rf $ZSH_CUSTOM/plugins/themes
 echo ' - [config]: sen.zshenv.zsh...'
 rm $ZSH_CUSTOM/sen.zshenv.zsh
 
-#echo ' - remove sen.zshrc.zsh...'
-#rm $ZSH_CUSTOM/sen.zshrc.zsh
+echo ' - remove sen.zshrc.zsh...'
+rm $ZSH_CUSTOM/sen.zshrc.zsh
 
 echo ' - [theme]: sen_cyg.zsh-theme...'
 rm $ZSH_CUSTOM/themes/sen_cyg.zsh-theme
