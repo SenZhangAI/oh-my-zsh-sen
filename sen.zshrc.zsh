@@ -4,10 +4,10 @@
 HISTFILE=$ZSH/log/.zhistory
 
 # メモリ内の履歴の数
-HISTSIZE=32768
+HISTSIZE=2048
 
 # 保存される履歴の数
-SAVEHIST=32768
+SAVEHIST=2048
 
 # 既にヒストリにあるコマンドは古い方を削除
 setopt hist_ignore_all_dups
@@ -31,7 +31,7 @@ setopt hist_ignore_dups
 setopt hist_ignore_space
 
 # ヒストリを呼び出してから実行する間に一旦編集できる状態になる
-setopt hist_verify
+#setopt hist_verify
 
 # history (fc -l) コマンドをヒストリリストから取り除く。
 setopt hist_no_store

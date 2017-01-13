@@ -27,6 +27,7 @@ alias -s gz='tar -xzvf'
 alias -s tgz='tar -xzvf'
 alias -s bz2='tar -xjvf'
 alias -s zip='unzip'
+alias cmakeDebug='cmake -DCMAKE_BUILD_TYPE=Debug'
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
@@ -42,16 +43,15 @@ case $OSTYPE {
 
     # Go environment
     export PATH=$PATH:/cygdrive/c/Go/bin
-    #below settings need more test
-    #export GOPATH=d:\\Cygwin\\home\\Sen\\GoWorkSpace
-    #export GOBIN=d:\\Cygwin\\home\\Sen\\GoWorkSpace\\bin
 
     # change cursor to blinking block
     echo -ne "\x1b[1 q"
+
     # start gdb
     export CYGWIN="$CYGWIN error_start=gdb -nw %1 %2"
     # generate core dump
     export CYGWIN="$CYGWIN error_start=dumper -d %1 %2"
+
     ZSH_THEME="ys";;
     # if use zsh-syntax-highlighting, it MUST be the last plugin sourced
     # plugins MUST config in .zshrc
