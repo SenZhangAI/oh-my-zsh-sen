@@ -31,7 +31,7 @@ alias cmakeDebug='cmake -DCMAKE_BUILD_TYPE=Debug'
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
+    export PATH="$PATH:$HOME/bin"
 fi
 
 # plugins should be modified in [.zshrc]
