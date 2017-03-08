@@ -4,10 +4,10 @@
 HISTFILE=$ZSH/log/.zhistory
 
 # メモリ内の履歴の数
-HISTSIZE=2048
+HISTSIZE=100
 
 # 保存される履歴の数
-SAVEHIST=2048
+SAVEHIST=100
 
 # 既にヒストリにあるコマンドは古い方を削除
 setopt hist_ignore_all_dups
