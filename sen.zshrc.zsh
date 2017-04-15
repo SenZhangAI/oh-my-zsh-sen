@@ -4,15 +4,15 @@
 HISTFILE=$ZSH/log/.zhistory
 
 # メモリ内の履歴の数
-HISTSIZE=100
+HISTSIZE=50
 
 # 保存される履歴の数
-SAVEHIST=100
+SAVEHIST=50
 
 # 既にヒストリにあるコマンドは古い方を削除
 setopt hist_ignore_all_dups
 
-#複数の文字の組み合わせをサポートするバイトモード
+# 複数の文字の組み合わせをサポートするバイトモード
 setopt COMBINING_CHARS
 
 # コマンドラインの余分なスペースを削除
