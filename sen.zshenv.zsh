@@ -58,7 +58,7 @@ case $OSTYPE {
     #plugins=(git z vi-mode);;
   linux*)
     # Go environment
-    export PATH="$PATH:/usr/local/go/bin"
+    export PATH="$PATH:/usr/local/go"
     export GOPATH="$HOME/GoWorkSpace:$HOME/GoProject"
     export GOBIN="$GOPATH/bin"
     export PATH="$PATH:$GOPATH/bin"
