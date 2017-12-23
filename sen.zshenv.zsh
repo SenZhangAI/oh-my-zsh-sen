@@ -34,6 +34,11 @@ if [ -d "$HOME/bin" ] ; then
     export PATH="$PATH:$HOME/bin"
 fi
 
+# Fix problem in tilix,see https://gnunn1.github.io/tilix-web/manual/vteconfig/
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
+
 # plugins should be modified in [.zshrc]
 # because this file is sourced after all plugins sourced.
 # more details are discirbed in sen.sourcePlugins.zsh
