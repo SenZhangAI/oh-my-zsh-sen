@@ -57,6 +57,11 @@ if [ ! -d $ZSH_CUSTOM/plugins/zsh-syntax-highlighting ]; then
   git clone git://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 fi
 
+if [ ! -d $ZSH_CUSTOM/plugins/zsh-autosuggestions ]; then
+  echo ' + [plugin]: zsh-autosuggestions'
+  git clone git://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+fi
+
 echo ' + [plugin]: themes'
 cp -rf plugins/themes $ZSH_CUSTOM/plugins/
 

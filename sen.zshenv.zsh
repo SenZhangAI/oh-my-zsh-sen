@@ -31,12 +31,12 @@ alias cmakeDebug='cmake -DCMAKE_BUILD_TYPE=Debug'
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-    export PATH="$PATH:$HOME/bin"
+  export PATH="$PATH:$HOME/bin"
 fi
 
 # Fix problem in tilix,see https://gnunn1.github.io/tilix-web/manual/vteconfig/
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
+  source /etc/profile.d/vte.sh
 fi
 
 # plugins should be modified in [.zshrc]
@@ -64,9 +64,9 @@ case $OSTYPE {
   linux*)
     # Go environment
     export PATH="$PATH:/usr/local/go"
-    export GOPATH="$HOME/GoWorkSpace:$HOME/GoProject"
-    export GOBIN="$GOPATH/bin"
-    export PATH="$PATH:$GOPATH/bin"
+    GOBASEPATH="$HOME/GoWorkSpace"
+    export GOPATH="$GOBASEPATH:$HOME/jubao"
+    export PATH="$PATH:$GOBASEPATH/bin"
 
     ZSH_THEME="ys";;
 
