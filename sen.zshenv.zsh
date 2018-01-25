@@ -67,6 +67,8 @@ case $OSTYPE {
     GOBASEPATH="$HOME/GoWorkSpace"
     export GOPATH="$GOBASEPATH:$HOME/jubao"
     export PATH="$PATH:$GOBASEPATH/bin"
+    # if rvm scripts exists, run it
+    [[ -s "$HOME/.rvm/scripts/rvm"  ]] && . "$HOME/.rvm/scripts/rvm"
 
     ZSH_THEME="ys";;
 
