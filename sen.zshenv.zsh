@@ -63,7 +63,6 @@ case $OSTYPE {
     #plugins=(git z vi-mode);;
   linux*)
     # Go environment
-    export PATH="$PATH:/usr/local/go"
     GOBASEPATH="$HOME/GoWorkSpace"
     export GOPATH="$GOBASEPATH:$HOME/jubao"
     export PATH="$PATH:$GOBASEPATH/bin"
