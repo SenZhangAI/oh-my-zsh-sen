@@ -69,6 +69,11 @@ case $OSTYPE {
     # if rvm scripts exists, run it
     [[ -s "$HOME/.rvm/scripts/rvm"  ]] && . "$HOME/.rvm/scripts/rvm"
 
+    # for Virtual Terminal Emulator
+    if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+      source /etc/profile.d/vte.sh
+    fi
+
     ZSH_THEME="ys";;
 
   darwin*)
