@@ -11,7 +11,7 @@
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='vim'
+  export EDITOR='nvim'
 fi
 
 #alias
@@ -64,7 +64,7 @@ case $OSTYPE {
   linux*)
     # Go environment
     GOBASEPATH="$HOME/GoWorkSpace"
-    export GOPATH="$GOBASEPATH:$HOME/jubao"
+    export GOPATH="$GOBASEPATH"
     export PATH="$PATH:$GOBASEPATH/bin"
     # if rvm scripts exists, run it
     [[ -s "$HOME/.rvm/scripts/rvm"  ]] && . "$HOME/.rvm/scripts/rvm"
