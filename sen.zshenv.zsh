@@ -77,5 +77,6 @@ case $OSTYPE {
     ZSH_THEME="ys";;
 
   darwin*)
+    alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
     ZSH_THEME="ys";;
-  }
+}
