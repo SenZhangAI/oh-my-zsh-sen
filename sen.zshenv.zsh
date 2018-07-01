@@ -29,6 +29,8 @@ alias -s bz2='tar -xjvf'
 alias -s zip='unzip'
 alias cmakeDebug='cmake -DCMAKE_BUILD_TYPE=Debug'
 
+alias npm='npm --registry https://registry.npm.taobao.org --disturl=https://npm.taobao.org/dist'
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
   export PATH="$PATH:$HOME/bin"
