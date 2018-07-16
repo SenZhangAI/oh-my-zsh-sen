@@ -16,6 +16,7 @@ fi
 
 #alias
 alias vi='vim'
+alias nv='nvim'
 alias df='df -h'
 alias du='du -hs'
 alias ps='ps -ef'
@@ -81,5 +82,12 @@ case $OSTYPE {
   darwin*)
     alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
     alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
+    # Go environment
+    GOBASEPATH="$HOME/GoWorkSpace"
+    export GOPATH="$GOBASEPATH"
+    export PATH="$PATH:$GOBASEPATH/bin"
+    # if rvm scripts exists, run it
+    [[ -s "$HOME/.rvm/scripts/rvm"  ]] && . "$HOME/.rvm/scripts/rvm"
+
     ZSH_THEME="ys";;
 }
