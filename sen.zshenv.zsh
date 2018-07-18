@@ -89,5 +89,10 @@ case $OSTYPE {
     # if rvm scripts exists, run it
     [[ -s "$HOME/.rvm/scripts/rvm"  ]] && . "$HOME/.rvm/scripts/rvm"
 
+	# For NVM
+	export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
+	export NVM_DIR=~/.nvm
+	source $(brew --prefix nvm)/nvm.sh
+
     ZSH_THEME="ys";;
 }
