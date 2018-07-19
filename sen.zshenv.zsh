@@ -86,6 +86,8 @@ case $OSTYPE {
     GOBASEPATH="$HOME/GoWorkSpace"
     export GOPATH="$GOBASEPATH"
     export PATH="$PATH:$GOBASEPATH/bin"
+	# Anaconda
+	export PATH="$PATH:/anaconda3/bin"
     # if rvm scripts exists, run it
     [[ -s "$HOME/.rvm/scripts/rvm"  ]] && . "$HOME/.rvm/scripts/rvm"
 
