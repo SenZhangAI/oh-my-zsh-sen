@@ -29,6 +29,7 @@ alias -s tgz='tar -xzvf'
 alias -s bz2='tar -xjvf'
 alias -s zip='unzip'
 alias cmakeDebug='cmake -DCMAKE_BUILD_TYPE=Debug'
+alias nvmInit='source $(brew --prefix nvm)/nvm.sh'
 
 alias npm='npm --registry https://registry.npm.taobao.org --disturl=https://npm.taobao.org/dist'
 
@@ -41,6 +42,9 @@ fi
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
   source /etc/profile.d/vte.sh
 fi
+
+# fix tmux color
+[ -n "$TMUX" ] && export TERM=screen-256color
 
 # plugins should be modified in [.zshrc]
 # because this file is sourced after all plugins sourced.
@@ -94,7 +98,7 @@ case $OSTYPE {
 	# For NVM
 	export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
 	export NVM_DIR=~/.nvm
-	source $(brew --prefix nvm)/nvm.sh
+	#source $(brew --prefix nvm)/nvm.sh # 这会严重拖慢zsh启动速度
 
     ZSH_THEME="ys";;
 }
