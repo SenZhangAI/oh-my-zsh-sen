@@ -44,7 +44,7 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 fi
 
 # fix tmux color
-[ -n "$TMUX" ] && export TERM=screen-256color
+[ -n "$TMUX" ] && export TERM="xterm-256color"
 
 # plugins should be modified in [.zshrc]
 # because this file is sourced after all plugins sourced.
