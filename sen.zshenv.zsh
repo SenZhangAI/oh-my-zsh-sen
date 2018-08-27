@@ -65,6 +65,7 @@ case $OSTYPE {
         #plugins=(git z vi-mode);;
     linux*)
         # Go environment
+        [ -s "/usr/local/go" ] && export PATH=$PATH:/usr/local/go/bin
         GOBASEPATH="$HOME/GoWorkSpace"
         export GOPATH="$GOBASEPATH"
         export PATH="$PATH:$GOBASEPATH/bin"
@@ -80,6 +81,7 @@ case $OSTYPE {
         alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
         alias MacDown='/Applications/MacDown.app/Contents/MacOS/MacDown'
         # Go environment
+        [ -s "/usr/local/go" ] && export PATH=$PATH:/usr/local/go/bin
         GOBASEPATH="$HOME/GoWorkSpace"
         export GOPATH="$GOBASEPATH"
         export PATH="$PATH:$GOBASEPATH/bin"
