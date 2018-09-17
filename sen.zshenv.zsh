@@ -45,6 +45,14 @@ fi
 # fix tmux color
 [ -n "$TMUX" ] && export TERM="xterm-256color"
 
+
+# config [less]
+#-X leaves file contents on the screen when less exits.
+#-F makes less quit if the entire output can be displayed on one screen.
+#-R displays ANSI color escape sequences in "raw" form.
+#-S disables line wrapping. Side-scroll to see long lines.
+export LESS="-XRFS"
+
 # plugins should be modified in [.zshrc]
 # because this file is sourced after all plugins sourced.
 # more details are discirbed in sen.sourcePlugins.zsh
