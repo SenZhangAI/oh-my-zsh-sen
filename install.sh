@@ -79,8 +79,16 @@ fi
 
 cp $INSTALLER_DIR/sen_cyg.zsh-theme $ZSH_CUSTOM/themes
 
+
+# set plugins
+plugins=$(cat $INSTALLER_DIR/plugins.conf)
+echo "set plugins from [plugins.conf]"
+echo "plugins=("
+echo "    $plugins"
+echo ")"
+
+perl -i -0pe 's/(^\s*plugins\s*=\s*\()\R*[^\R]*(\R*\))/${1}\n    '"$plugins"'\n${2}/gms' $HOME/.zshrc
+
 # ********************************************************************
 echo 'done.'
-echo 'ATTENTION: If you want to add/delete any plugin for oh-my-zsh,'
-echo '           You should modify $plugins in [.zshrc]'
-echo 'example: plugins=(git z vi-mode zsh-syntax-highlighting)'
+
