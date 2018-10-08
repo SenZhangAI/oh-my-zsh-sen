@@ -2,7 +2,6 @@
 # may need to manually set language environment
 #export LANG=zh_CN.UTF-8
 #export LC_CTYPE="zh_CN.UTF-8"
-
 #export JAVA_HOME=/usr/lib/jvm/java-7-icedtea
 #export JAVA_OPTS='-Dfile.encoding=UTF-8'
 #export PYTHONSTARTUP=$HOME/.pythonrc.py
@@ -53,9 +52,6 @@ fi
 #-S disables line wrapping. Side-scroll to see long lines.
 export LESS="-XRFS"
 
-# plugins should be modified in [.zshrc]
-# because this file is sourced after all plugins sourced.
-# more details are discirbed in sen.sourcePlugins.zsh
 case $OSTYPE {
     cygwin*)
         alias ep='explorer'
@@ -68,9 +64,6 @@ case $OSTYPE {
         # generate core dump
         export CYGWIN="$CYGWIN error_start=dumper -d %1 %2"
         ZSH_THEME="ys";;
-        # when use zsh-syntax-highlighting, it MUST be the last plugin sourced
-        # plugins MUST config in .zshrc
-        #plugins=(git z vi-mode);;
     linux*)
         # Go environment
         [ -s "/usr/local/go" ] && export PATH=$PATH:/usr/local/go/bin

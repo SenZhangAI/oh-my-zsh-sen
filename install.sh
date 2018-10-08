@@ -81,7 +81,7 @@ cp $INSTALLER_DIR/sen_cyg.zsh-theme $ZSH_CUSTOM/themes
 
 
 # set plugins
-plugins=$(cat $INSTALLER_DIR/plugins.conf)
+plugins=$(sed '/^#.*/d' $INSTALLER_DIR/plugins.conf)
 echo "set plugins from [plugins.conf]"
 echo "plugins=("
 echo "    $plugins"

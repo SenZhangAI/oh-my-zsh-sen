@@ -3,11 +3,8 @@ Thanks to the origin author!
 
 ## zsh my custom using oh-my-zsh
 
-Because oh-my-zsh is very slow in some situation, I tried to write another config for zsh.
-
-This is still useful if use oh-my-zsh directly.
-
-See [zsh-sen](https://github.com/SenZhangAI/zsh-sen)
+Because oh-my-zsh is very slow in Cygwin(caused by git and havn't fixed this problem),
+I tried to write another config for zsh.  See [zsh-sen](https://github.com/SenZhangAI/zsh-sen)
 
 ### Install
 ----------------
@@ -20,14 +17,13 @@ See [zsh-sen](https://github.com/SenZhangAI/zsh-sen)
 
 4. `cd oh-my-zsh-sen`
 
-5. `./install.sh`
+5. add or delete plugins as you like in `plugins.conf`, for example:
 
-6. add plugins by modify the `~/.zshrc`, for example:
-
-```bash
-#plugins=(git) #the original config
-plugins=(git z vi-mode zsh-syntax-highlighting)
 ```
+git z zsh-syntax-highlighting
+```
+
+6. `./install.sh`
 
 7. `source ~/.zshrc`
 
