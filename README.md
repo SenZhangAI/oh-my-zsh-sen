@@ -17,7 +17,9 @@ I tried to write another config for zsh.  See [zsh-sen](https://github.com/SenZh
 
 4. `cd oh-my-zsh-sen`
 
-5. add or delete plugins as you with in `plugins.conf`, for example(*Notice that you may need to remove `vi-mode` plugin if you don't familar with vim*):
+5. add or delete plugins as you with in `plugins.conf`, for example:
+
+(*Notice that you may need to remove `vi-mode` plugin if you don't familar with vim*)
 
 ```
 git z zsh-syntax-highlighting
