@@ -17,12 +17,19 @@ I tried to write another config for zsh.  See [zsh-sen](https://github.com/SenZh
 
 4. `cd oh-my-zsh-sen`
 
-5. add or delete plugins as you with in `plugins.conf`, for example:
+5. config your favirate plugins in `plugins.conf`, for example:
 
 (*Notice that you may need to remove `vi-mode` plugin if you don't familar with vim*)
 
 ```
-git z zsh-syntax-highlighting
+# List of plugins, if you don't need some of there plugins, just comment them
+## Attention: zsh-syntax-highlighting must be the last plugin
+git
+z
+#vi-mode
+#docker
+#vagrant
+zsh-syntax-highlighting
 ```
 
 6. `./install.sh`

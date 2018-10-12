@@ -79,14 +79,16 @@ fi
 
 cp $INSTALLER_DIR/sen_cyg.zsh-theme $ZSH_CUSTOM/themes
 
-
 # set plugins
-plugins=$(sed '/^#.*/d' $INSTALLER_DIR/plugins.conf)
+## remove comment
+_plugins=$(sed '/^#.*/d' $INSTALLER_DIR/plugins.conf)
+## combine multilines into single line
+plugins=$(echo $_plugins | perl -pe 's/\n//g')
+
 echo "set plugins from [plugins.conf]"
 echo "plugins=("
 echo "    $plugins"
 echo ")"
-
 perl -i -0pe 's/(^\s*plugins\s*=\s*\()\R*[^\R]*(\R*\))/${1}\n    '"$plugins"'\n${2}/gms' $HOME/.zshrc
 
 # ********************************************************************
