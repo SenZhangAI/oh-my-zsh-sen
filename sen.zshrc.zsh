@@ -29,4 +29,4 @@ bindkey '^S' history-incremental-pattern-search-forward
 function chpwd() { ls }
 
 # To disable highlighting of globbing expressions
-ZSH_HIGHLIGHT_STYLES[globbing]='none'
+#ZSH_HIGHLIGHT_STYLES[globbing]='none'
