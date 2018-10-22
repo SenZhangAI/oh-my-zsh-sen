@@ -27,9 +27,10 @@ alias -s tgz='tar -xzvf'
 alias -s bz2='tar -xjvf'
 alias -s zip='unzip'
 alias cmakeDebug='cmake -DCMAKE_BUILD_TYPE=Debug'
-alias nvmInit='source $(brew --prefix nvm)/nvm.sh'
 
 alias npm='npm --registry https://registry.npm.taobao.org --disturl=https://npm.taobao.org/dist'
+
+alias chef-init='eval "$(chef shell-init zsh)"'
 
 # set PATH so it includes user's private when $HOME/bin exists
 if [ -d "$HOME/bin" ] ; then
@@ -92,6 +93,6 @@ case $OSTYPE {
         [[ -s "$HOME/.rvm/scripts/rvm"  ]] && . "$HOME/.rvm/scripts/rvm"
         export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
         export NVM_DIR=~/.nvm
-        #source $(brew --prefix nvm)/nvm.sh # 这会严重拖慢zsh启动速度
+        alias nvm-init='source $(brew --prefix nvm)/nvm.sh'
         ZSH_THEME="ys";;
     }
