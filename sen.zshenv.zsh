@@ -26,6 +26,7 @@ alias -s gz='tar -xzvf'
 alias -s tgz='tar -xzvf'
 alias -s bz2='tar -xjvf'
 alias -s zip='unzip'
+alias -s rar='unrar x'
 alias cmakeDebug='cmake -DCMAKE_BUILD_TYPE=Debug'
 
 alias npm='npm --registry https://registry.npm.taobao.org --disturl=https://npm.taobao.org/dist'
