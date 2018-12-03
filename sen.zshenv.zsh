@@ -49,12 +49,12 @@ fi
 
 # config [less]
 #-X leaves file contents on the screen when less exits.
-#-F makes less quit if the entire output can be displayed on one screen.
+#-F makes less quit when the entire output can be displayed on one screen.
 #-R displays ANSI color escape sequences in "raw" form.
 #-S disables line wrapping. Side-scroll to see long lines.
 export LESS="-XRFS"
 
-case $OSTYPE {
+case $OSTYPE in
     cygwin*)
         alias ep='explorer'
         # Go environment
@@ -96,4 +96,4 @@ case $OSTYPE {
         export NVM_DIR=~/.nvm
         alias nvm-init='source $(brew --prefix nvm)/nvm.sh'
         ZSH_THEME="ys";;
-    }
+esac
