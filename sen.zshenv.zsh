@@ -29,6 +29,9 @@ alias -s zip='unzip'
 alias -s rar='unrar x'
 alias cmakeDebug='cmake -DCMAKE_BUILD_TYPE=Debug'
 
+alias gskip='git update-index --skip-worktree'
+alias gunskip='git update-index --no-skip-worktree'
+
 alias npm='npm --registry https://registry.npm.taobao.org --disturl=https://npm.taobao.org/dist'
 
 alias chef-init='eval "$(chef shell-init zsh)"'
@@ -59,6 +62,12 @@ case $OSTYPE in
         alias ep='explorer'
         # Go environment
         export PATH=$PATH:/cygdrive/c/Go/bin
+        GOBASEPATH="$HOME/GoWorkSpace"
+        GOBASEPATH_WIN=`cygpath -w $GOBASEPATH`
+        GOBIN_WIN=`cygpath -w $GOBASEPATH/bin`
+        export GOPATH="$GOBASEPATH_WIN"
+        export GOBIN="$GOBIN_WIN"
+        export PATH="$PATH:$GOBASEPATH/bin"
         # change cursor to blinking block
         echo -ne "\x1b[1 q"
         # start gdb
