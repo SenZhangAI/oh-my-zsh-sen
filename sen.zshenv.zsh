@@ -9,7 +9,7 @@
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR='vim'
 else
-    export EDITOR='nvim'
+    export EDITOR='vim'
 fi
 
 #alias
@@ -38,7 +38,7 @@ alias chef-init='eval "$(chef shell-init zsh)"'
 
 # set PATH so it includes user's private when $HOME/bin exists
 if [ -d "$HOME/bin" ] ; then
-    export PATH="$PATH:$HOME/bin"
+    export PATH="$HOME/bin:$PATH"
 fi
 
 # Fix problem in tilix,see https://gnunn1.github.io/tilix-web/manual/vteconfig/
@@ -61,11 +61,11 @@ case $OSTYPE in
     cygwin*)
         alias ep='explorer'
         # Go environment
-        export PATH=$PATH:/cygdrive/c/Go/bin
+        export PATH=$PATH:/cygdrive/c/go/bin
         GOBASEPATH="$HOME/GoWorkSpace"
-        GOBASEPATH_WIN=`cygpath -w $GOBASEPATH`
-        GOBIN_WIN=`cygpath -w $GOBASEPATH/bin`
-        export GOPATH="$GOBASEPATH_WIN"
+        GOPATH_WIN=`cygpath -a -w $GOBASEPATH`
+        GOBIN_WIN=`cygpath -a -w $GOBASEPATH/bin`
+        export GOPATH="$GOPATH_WIN"
         export GOBIN="$GOBIN_WIN"
         export PATH="$PATH:$GOBASEPATH/bin"
         # change cursor to blinking block
