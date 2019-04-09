@@ -13,8 +13,12 @@ else
 fi
 
 #alias
-alias vi='vim'
-alias nv='nvim'
+if which nvim>/dev/null 2>&1; then
+    alias vi='nvim'
+elif which vim>/dev/null 2>&1; then
+    alias vi='vim'
+fi
+
 alias df='df -h'
 alias du='du -hs'
 alias ps='ps -ef'
