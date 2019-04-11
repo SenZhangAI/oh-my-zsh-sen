@@ -103,6 +103,7 @@ case $OSTYPE in
         [ -s "/usr/local/go" ] && export PATH=$PATH:/usr/local/go/bin
         GOBASEPATH="$HOME/GoWorkSpace"
         export GOPATH="$GOBASEPATH"
+        export GO111MODULE=on
         export PATH="$PATH:$GOBASEPATH/bin"
         # Anaconda
         export PATH="$PATH:/anaconda3/bin"
