@@ -41,6 +41,11 @@ if [ -d "$HOME/bin" ] ; then
     export PATH="$HOME/bin:$PATH"
 fi
 
+if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ] ; then
+    #alias nix-init='. $HOME/.nix-profile/etc/profile.d/nix.sh'
+    . $HOME/.nix-profile/etc/profile.d/nix.sh
+fi
+
 if [ -d "$HOME/.local/bin" ] ; then
     export PATH="$PATH:$HOME/.local/bin"
 fi
