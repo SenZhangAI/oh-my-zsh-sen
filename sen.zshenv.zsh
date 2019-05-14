@@ -13,8 +13,12 @@ else
 fi
 
 #alias
-alias vi='vim'
-alias nv='nvim'
+if which nvim>/dev/null 2>&1; then
+    alias vi='nvim'
+elif which vim>/dev/null 2>&1; then
+    alias vi='vim'
+fi
+
 alias df='df -h'
 alias du='du -hs'
 alias ps='ps -ef'
@@ -35,6 +39,7 @@ alias gunskip='git update-index --no-skip-worktree'
 alias npm='npm --registry https://registry.npm.taobao.org --disturl=https://npm.taobao.org/dist'
 
 alias chef-init='eval "$(chef shell-init zsh)"'
+alias rvm-init='source $HOME/.rvm/scripts/rvm'
 
 # set PATH so it includes user's private when $HOME/bin exists
 if [ -d "$HOME/bin" ] ; then
@@ -47,7 +52,7 @@ if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ] ; then
 fi
 
 if [ -d "$HOME/.local/bin" ] ; then
-    export PATH="$PATH:$HOME/.local/bin"
+    export PATH="$HOME/.local/bin:$PATH"
 fi
 
 # Fix problem in tilix,see https://gnunn1.github.io/tilix-web/manual/vteconfig/
@@ -90,8 +95,6 @@ case $OSTYPE in
         GOBASEPATH="$HOME/GoWorkSpace"
         export GOPATH="$GOBASEPATH"
         export PATH="$PATH:$GOBASEPATH/bin"
-        # when rvm scripts exists, run it
-        [[ -s "$HOME/.rvm/scripts/rvm"  ]] && . "$HOME/.rvm/scripts/rvm"
         # Virtual Terminal Emulator
         if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
             source /etc/profile.d/vte.sh
@@ -105,11 +108,10 @@ case $OSTYPE in
         [ -s "/usr/local/go" ] && export PATH=$PATH:/usr/local/go/bin
         GOBASEPATH="$HOME/GoWorkSpace"
         export GOPATH="$GOBASEPATH"
+        export GO111MODULE=on
         export PATH="$PATH:$GOBASEPATH/bin"
         # Anaconda
         export PATH="$PATH:/anaconda3/bin"
-        # when rvm scripts exists, run it
-        [[ -s "$HOME/.rvm/scripts/rvm"  ]] && . "$HOME/.rvm/scripts/rvm"
         export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
         export NVM_DIR=~/.nvm
         alias nvm-init='source $(brew --prefix nvm)/nvm.sh'
