@@ -39,7 +39,7 @@ alias gunskip='git update-index --no-skip-worktree'
 alias npm='npm --registry https://registry.npm.taobao.org --disturl=https://npm.taobao.org/dist'
 
 alias chef-init='eval "$(chef shell-init zsh)"'
-alias rvm-init='source $HOME/.rvm/scripts/rvm'
+alias rvm-init='if [ -d $HOME/.rvm/scripts ]; then source $HOME/.rvm/scripts/rvm; else echo "$HOME/.rvm/scripts not found"; fi'
 
 # set PATH so it includes user's private when $HOME/bin exists
 if [ -d "$HOME/bin" ] ; then
