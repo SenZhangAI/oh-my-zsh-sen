@@ -1,7 +1,7 @@
 #export
 # may need to manually set language environment
-#export LANG=zh_CN.UTF-8
-#export LC_CTYPE="zh_CN.UTF-8"
+export LANG=en_US.UTF-8
+#export LC_CTYPE="en_US.UTF-8"
 #export JAVA_HOME=/usr/lib/jvm/java-7-icedtea
 #export JAVA_OPTS='-Dfile.encoding=UTF-8'
 #export PYTHONSTARTUP=$HOME/.pythonrc.py
