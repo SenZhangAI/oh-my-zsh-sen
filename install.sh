@@ -96,6 +96,27 @@ perl -i -0pe 's/(^\s*plugins\s*=\s*\()\R*[^\R]*(\R*\))/${1}\n    '"$plugins"'\n$
 
 unset plugins
 
+set_zsh_default_shell() {
+    echo "default shell is $SHELL"
+    if [[ $SHELL =~ zsh ]]; then
+        return
+    fi
+    echo "Try Changing defalt shell to zsh..."
+
+    if command_installed chsh; then
+        chsh -s /bin/zsh
+        return
+    fi
+
+    if [ ! -f "/etc/passwd" ]; then
+        mkpasswd > /etc/passwd
+    fi
+
+    #TODO 修改/etc/passwd
+}
+
+set_zsh_default_shell
+
 # ********************************************************************
 echo 'done.'
 
