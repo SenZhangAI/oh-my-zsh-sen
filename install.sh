@@ -4,46 +4,46 @@
 # Use colors, but only if connected to a terminal, and that terminal
 # supports them.
 if which tput >/dev/null 2>&1; then
-  ncolors=$(tput colors)
+    ncolors=$(tput colors)
 fi
 if [ -t 1 ] && [ -n "$ncolors" ] && [ "$ncolors" -ge 8 ]; then
-  RED="$(tput setaf 1)"
-  GREEN="$(tput setaf 2)"
-  YELLOW="$(tput setaf 3)"
-  BLUE="$(tput setaf 4)"
-  BOLD="$(tput bold)"
-  NORMAL="$(tput sgr0)"
+    RED="$(tput setaf 1)"
+    GREEN="$(tput setaf 2)"
+    YELLOW="$(tput setaf 3)"
+    BLUE="$(tput setaf 4)"
+    BOLD="$(tput bold)"
+    NORMAL="$(tput sgr0)"
 else
-  RED=""
-  GREEN=""
-  YELLOW=""
-  BLUE=""
-  BOLD=""
-  NORMAL=""
+    RED=""
+    GREEN=""
+    YELLOW=""
+    BLUE=""
+    BOLD=""
+    NORMAL=""
 fi
 
 # ********************************************************************
 # check install
 CHECK_ZSH_INSTALLED=$(grep /zsh$ /etc/shells | wc -l)
 if [ ! $CHECK_ZSH_INSTALLED -ge 1 ]; then
-  printf "${YELLOW}Zsh is not installed!${NORMAL} Please install zsh first!\n"
-  exit
+    printf "${YELLOW}Zsh is not installed!${NORMAL} Please install zsh first!\n"
+    exit
 fi
 unset CHECK_ZSH_INSTALLED
 
 if [ ! -n "$ZSH" ]; then
-  ZSH=~/.oh-my-zsh
+    ZSH=~/.oh-my-zsh
 fi
 
 
 if [ ! -n "$ZSH_CUSTOM" ]; then
-  ZSH_CUSTOM=~/.oh-my-zsh/custom
+    ZSH_CUSTOM=~/.oh-my-zsh/custom
 fi
 
 if [ ! -d "$ZSH" ]; then
-  printf "You may not install ${YELLOW}[Oh-My-Zsh]${NORMAL}.\n"
-  printf "You need to install it first.\n"
-  exit
+    printf "You may not install ${YELLOW}[Oh-My-Zsh]${NORMAL}.\n"
+    printf "You need to install it first.\n"
+    exit
 fi
 
 # get INSTALLER_DIR
@@ -53,13 +53,13 @@ INSTALLER_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 echo 'install start...'
 
 if [ ! -d $ZSH_CUSTOM/plugins/zsh-syntax-highlighting ]; then
-  echo ' + [plugin]: zsh-syntax-highlighting'
-  git clone --depth=1 git://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+    echo ' + [plugin]: zsh-syntax-highlighting'
+    git clone --depth=1 git://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 fi
 
 if [ ! -d $ZSH_CUSTOM/plugins/zsh-autosuggestions ]; then
-  echo ' + [plugin]: zsh-autosuggestions'
-  git clone --depth=1 git://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+    echo ' + [plugin]: zsh-autosuggestions'
+    git clone --depth=1 git://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 fi
 
 echo ' + [plugin]: themes'
@@ -77,7 +77,7 @@ cp $INSTALLER_DIR/tldr.complete.zsh $ZSH_CUSTOM
 ## install theme
 echo ' + [theme]: sen.zsh-theme...'
 if [ ! -d $ZSH_CUSTOM/themes ]; then
-  mkdir $ZSH_CUSTOM/themes
+    mkdir $ZSH_CUSTOM/themes
 fi
 
 cp $INSTALLER_DIR/sen_cyg.zsh-theme $ZSH_CUSTOM/themes
@@ -103,7 +103,7 @@ set_zsh_default_shell() {
     fi
     echo "Try Changing defalt shell to zsh..."
 
-    if command_installed chsh; then
+    if which chsh ``>/dev/null 2>&1; then
         chsh -s /bin/zsh
         return
     fi
