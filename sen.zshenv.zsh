@@ -71,6 +71,9 @@ fi
 #-S disables line wrapping. Side-scroll to see long lines.
 export LESS="-XRFS"
 
+export GO111MODULE=on
+export GOPROXY=https://goproxy.io
+
 case $OSTYPE in
     cygwin*)
         alias ep='explorer'
@@ -108,7 +111,6 @@ case $OSTYPE in
         [ -s "/usr/local/go" ] && export PATH=$PATH:/usr/local/go/bin
         GOBASEPATH="$HOME/GoWorkSpace"
         export GOPATH="$GOBASEPATH"
-        export GO111MODULE=on
         export PATH="$PATH:$GOBASEPATH/bin"
         # Anaconda
         export PATH="$PATH:/anaconda3/bin"
