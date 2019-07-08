@@ -71,7 +71,7 @@ fi
 #-S disables line wrapping. Side-scroll to see long lines.
 export LESS="-XRFS"
 
-export GO111MODULE=on
+export GO111MODULE=auto
 export GOPROXY=https://goproxy.io
 
 case $OSTYPE in
