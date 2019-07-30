@@ -19,10 +19,10 @@ I tried to write another config for zsh.  See [zsh-sen](https://github.com/SenZh
 
 5. config your favirate plugins in `plugins.conf`, for example:
 
-(*Notice that you may need to remove `vi-mode` plugin if you don't familar with vim*)
+**(Notice that you may need to remove `vi-mode` plugin if you don't familar with vim)**
 
 ```
-# List of plugins, if you don't need some of there plugins, just comment them
+# List of plugins, if you don't need some plugins, just comment them by `#`
 ## Attention: zsh-syntax-highlighting must be the last plugin
 git
 z
