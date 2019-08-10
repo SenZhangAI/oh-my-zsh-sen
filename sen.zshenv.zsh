@@ -49,7 +49,7 @@ if [ -d "$HOME/node_modules/.bin" ] ; then
 fi
 
 if [ -d "$HOME/bin" ] ; then
-    export PATH="$HOME/bin:$PATH"
+    export PATH="$PATH:$HOME/bin"
 fi
 
 if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ] ; then
