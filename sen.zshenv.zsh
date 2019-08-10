@@ -44,6 +44,10 @@ alias chef-init='eval "$(chef shell-init zsh)"'
 alias rvm-init='if [ -d $HOME/.rvm/scripts ]; then source $HOME/.rvm/scripts/rvm; else echo "$HOME/.rvm/scripts not found"; fi'
 
 # set PATH so it includes user's private when $HOME/bin exists
+if [ -d "$HOME/node_modules/.bin" ] ; then
+    export PATH="$HOME/node_modules/.bin:$PATH"
+fi
+
 if [ -d "$HOME/bin" ] ; then
     export PATH="$HOME/bin:$PATH"
 fi
@@ -65,6 +69,8 @@ fi
 # fix tmux color
 [ -n "$TMUX" ] && export TERM="xterm-256color"
 
+#rustup mirror
+#export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
 
 # config [less]
 #-X leaves file contents on the screen when less exits.
