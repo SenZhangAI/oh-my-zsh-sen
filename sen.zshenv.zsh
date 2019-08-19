@@ -33,6 +33,7 @@ alias -s bz2='tar -xjvf'
 alias -s zip='unzip'
 alias -s rar='unrar x'
 alias -s xz='xz -d'
+alias -s xz='7z e'
 alias cmakeDebug='cmake -DCMAKE_BUILD_TYPE=Debug'
 
 alias gskip='git update-index --skip-worktree'
@@ -125,7 +126,7 @@ case $OSTYPE in
         export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
         export NVM_DIR=~/.nvm
         alias nvm-init='source $(brew --prefix nvm)/nvm.sh'
-        export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+        export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-cask.git
         export HOMEBREW_NO_AUTO_UPDATE=true
         ZSH_THEME="ys";;
 esac
