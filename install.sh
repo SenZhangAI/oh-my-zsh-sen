@@ -71,6 +71,9 @@ cp $INSTALLER_DIR/sen.zshenv.zsh $ZSH_CUSTOM
 echo ' + [config]: sen.zshrc.zsh...'
 cp $INSTALLER_DIR/sen.zshrc.zsh $ZSH_CUSTOM
 
+echo ' + [config]: sen.func.zsh...'
+cp $INSTALLER_DIR/sen.func.zsh $ZSH_CUSTOM
+
 echo ' + [config]: tldr.complete.zsh...'
 cp $INSTALLER_DIR/tldr.complete.zsh $ZSH_CUSTOM
 
