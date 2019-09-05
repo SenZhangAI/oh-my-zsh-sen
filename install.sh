@@ -63,7 +63,7 @@ if [ ! -d $ZSH_CUSTOM/plugins/zsh-autosuggestions ]; then
 fi
 
 echo ' + [plugin]: themes'
-cp -rf plugins/themes $ZSH_CUSTOM/plugins/
+cp -rf $INSTALLER_DIR/plugins/themes $ZSH_CUSTOM/plugins/
 
 echo ' + [config]: sen.zshenv.zsh...'
 cp $INSTALLER_DIR/sen.zshenv.zsh $ZSH_CUSTOM
