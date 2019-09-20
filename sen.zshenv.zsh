@@ -131,3 +131,8 @@ case $OSTYPE in
         export HOMEBREW_NO_AUTO_UPDATE=true
         ZSH_THEME="ys";;
 esac
+
+if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
+    SESSION_NAME="remotetmux"
+    tmux attach-session -t $SESSION_NAME || tmux new-session -s $SESSION_NAME
+fi
