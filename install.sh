@@ -32,7 +32,7 @@ fi
 INSTALLER_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 # ********************************************************************
 # install start
-echo 'install start...'
+echo 'Install start...'
 
 if [ ! -d $ZSH_CUSTOM/plugins/zsh-syntax-highlighting ]; then
     echo ' + [plugin]: zsh-syntax-highlighting'
@@ -73,7 +73,7 @@ _plugins=$(sed '/^#.*/d' $INSTALLER_DIR/plugins.conf)
 ## combine multilines into single line
 plugins=$(echo $_plugins | perl -pe 's/\n//g') && unset _plugins
 
-echo "set plugins from [plugins.conf]"
+printf "\nSet plugins from [plugins.conf]\n"
 echo "plugins=("
 echo "    $plugins"
 echo ")"
@@ -82,7 +82,7 @@ perl -i -0pe 's/(^\s*plugins\s*=\s*\()\R*[^\R]*(\R*\))/${1}\n    '"$plugins"'\n$
 unset plugins
 
 set_zsh_default_shell() {
-    echo "default shell is $SHELL"
+    printf "\ndefault shell is \033[32m$SHELL\033[0m\n"
     if [[ $SHELL =~ zsh ]]; then
         return
     fi

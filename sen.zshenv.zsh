@@ -67,6 +67,10 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
 fi
 
+# TODO
+#export LDFLAGS="-L/usr/local/opt/llvm/lib"
+#export CPPFLAGS="-I/usr/local/opt/llvm/include"
+
 # fix tmux color
 [ -n "$TMUX" ] && export TERM="xterm-256color"
 
@@ -116,6 +120,7 @@ case $OSTYPE in
         alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
         alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
         alias MacDown='/Applications/MacDown.app/Contents/MacOS/MacDown'
+        alias Typora='/Applications/Typora.app/Contents/MacOS/Typora'
         # Go environment
         [ -s "/usr/local/go" ] && export PATH=$PATH:/usr/local/go/bin
         GOBASEPATH="$HOME/GoWorkSpace"
