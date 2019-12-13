@@ -117,10 +117,10 @@ case $OSTYPE in
         fi
         ZSH_THEME="ys";;
     darwin*)
-        alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-        alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
-        alias MacDown='/Applications/MacDown.app/Contents/MacOS/MacDown'
-        alias Typora='/Applications/Typora.app/Contents/MacOS/Typora'
+        alias subl='open -a "Sublime Text"'
+        alias code='open -a "Visual Studio Code"'
+        alias MacDown='open -a MacDown'
+        alias Typora='open -a Typora'
         # Go environment
         [ -s "/usr/local/go" ] && export PATH=$PATH:/usr/local/go/bin
         GOBASEPATH="$HOME/GoWorkSpace"
