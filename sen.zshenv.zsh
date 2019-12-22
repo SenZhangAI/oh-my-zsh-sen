@@ -131,7 +131,8 @@ case $OSTYPE in
         ZSH_THEME="ys";;
 esac
 
-if [[ -n "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
+#if [[ -n "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
+if [ "$SSH_CONNECTION" != "" ]; then
     SESSION_NAME="remotetmux"
     tmux attach-session -t $SESSION_NAME || tmux new-session -s $SESSION_NAME
 fi
