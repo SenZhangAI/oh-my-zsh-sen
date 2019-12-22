@@ -107,6 +107,13 @@ case $OSTYPE in
         if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
             source /etc/profile.d/vte.sh
         fi
+        #JAVA
+        [ -d "/etc/alternatives/java_sdk/bin" ] && export JAVA_HOME="/etc/alternatives/java_sdk"
+        if [ "$JAVA_HOME" != "" ]; then
+            export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+            export PATH=$JAVA_HOME/bin:$PATH
+        fi
+
         ZSH_THEME="ys";;
     darwin*)
         alias subl='open -a "Sublime Text"'
