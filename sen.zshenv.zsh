@@ -2,21 +2,15 @@
 # may need to manually set language environment
 export LANG=en_US.UTF-8
 #export LC_CTYPE="en_US.UTF-8"
-#export JAVA_HOME=/usr/lib/jvm/java-7-icedtea
-#export JAVA_OPTS='-Dfile.encoding=UTF-8'
 #export PYTHONSTARTUP=$HOME/.pythonrc.py
-
-if [[ -n $SSH_CONNECTION ]]; then
-    export EDITOR='vim'
-else
-    export EDITOR='vim'
-fi
 
 #alias
 if which nvim>/dev/null 2>&1; then
     alias vi='nvim'
+    export EDITOR='nvim'
 elif which vim>/dev/null 2>&1; then
     alias vi='vim'
+    export EDITOR='vim'
 fi
 
 alias df='df -h'
@@ -110,6 +104,7 @@ case $OSTYPE in
         #JAVA
         [ -d "/etc/alternatives/java_sdk/bin" ] && export JAVA_HOME="/etc/alternatives/java_sdk"
         if [ "$JAVA_HOME" != "" ]; then
+            export JAVA_OPTS='-Dfile.encoding=UTF-8'
             export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
             export PATH=$JAVA_HOME/bin:$PATH
         fi
