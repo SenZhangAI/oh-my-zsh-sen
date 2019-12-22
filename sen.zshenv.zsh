@@ -33,7 +33,7 @@ alias -s bz2='tar -xjvf'
 alias -s zip='unzip'
 alias -s rar='unrar x'
 alias -s xz='xz -d'
-alias -s xz='7z e'
+alias -s 7z='7z e' # TODO 7z文件如何解压，mac中有p7zip 命令行工具
 alias cmakeDebug='cmake -DCMAKE_BUILD_TYPE=Debug'
 
 alias gskip='git update-index --skip-worktree'
@@ -45,27 +45,19 @@ alias chef-init='eval "$(chef shell-init zsh)"'
 alias rvm-init='if [ -d $HOME/.rvm/scripts ]; then source $HOME/.rvm/scripts/rvm; else echo "$HOME/.rvm/scripts not found"; fi'
 
 # set PATH so it includes user's private when $HOME/bin exists
-if [ -d "$HOME/node_modules/.bin" ] ; then
-    export PATH="$HOME/node_modules/.bin:$PATH"
-fi
+[ -d "$HOME/node_modules/.bin" ] && export PATH="$HOME/node_modules/.bin:$PATH"
 
-if [ -d "$HOME/bin" ] ; then
-    export PATH="$PATH:$HOME/bin"
-fi
+[ -d "$HOME/bin" ] && export PATH="$PATH:$HOME/bin"
 
 if [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ] ; then
     #alias nix-init='. $HOME/.nix-profile/etc/profile.d/nix.sh'
     . $HOME/.nix-profile/etc/profile.d/nix.sh
 fi
 
-if [ -d "$HOME/.local/bin" ] ; then
-    export PATH="$HOME/.local/bin:$PATH"
-fi
+[ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
 
 # Fix problem in tilix,see https://gnunn1.github.io/tilix-web/manual/vteconfig/
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-    source /etc/profile.d/vte.sh
-fi
+[ $TILIX_ID ] || [ $VTE_VERSION ] && source /etc/profile.d/vte.sh
 
 # TODO
 #export LDFLAGS="-L/usr/local/opt/llvm/lib"
