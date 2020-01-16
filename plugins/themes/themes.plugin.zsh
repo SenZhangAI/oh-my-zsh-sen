@@ -1,5 +1,4 @@
-function theme
-{
+function theme () {
     if [ -z "$1" ] || [ "$1" = "random" ]; then
         themes=($ZSH/themes/*zsh-theme)
         N=${#themes[@]}
@@ -20,8 +19,7 @@ function theme
     fi
 }
 
-function lstheme
-{
+function lstheme() {
     # default themes
     ls $ZSH/themes | grep '.zsh-theme$' | sed 's,\.zsh-theme$,,'
 
