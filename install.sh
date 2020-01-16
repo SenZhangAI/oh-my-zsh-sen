@@ -32,6 +32,7 @@ fi
 INSTALLER_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 # ********************************************************************
 # install start
+echo '****************************************************************'
 echo 'Install start...'
 
 if [ ! -d $ZSH_CUSTOM/plugins/zsh-syntax-highlighting ]; then
@@ -47,25 +48,15 @@ fi
 echo ' + [plugin]: themes'
 cp -rf $INSTALLER_DIR/plugins/themes $ZSH_CUSTOM/plugins/
 
-echo ' + [config]: sen.zshenv.zsh...'
-cp $INSTALLER_DIR/sen.zshenv.zsh $ZSH_CUSTOM
+add_config() {
+    echo " + [config]: $1"
+    cp $INSTALLER_DIR/$1 $ZSH_CUSTOM
+}
 
-echo ' + [config]: sen.zshrc.zsh...'
-cp $INSTALLER_DIR/sen.zshrc.zsh $ZSH_CUSTOM
-
-echo ' + [config]: sen.func.zsh...'
-cp $INSTALLER_DIR/sen.func.zsh $ZSH_CUSTOM
-
-echo ' + [config]: tldr.complete.zsh...'
-cp $INSTALLER_DIR/tldr.complete.zsh $ZSH_CUSTOM
-
-## install theme
-echo ' + [theme]: sen.zsh-theme...'
-if [ ! -d $ZSH_CUSTOM/themes ]; then
-    mkdir $ZSH_CUSTOM/themes
-fi
-
-cp $INSTALLER_DIR/sen_cyg.zsh-theme $ZSH_CUSTOM/themes
+add_config env.zsh
+add_config config.zsh
+add_config functions.zsh
+add_config tldr.complete.zsh
 
 # set plugins
 ## remove comments of leading '#'
@@ -96,12 +87,10 @@ set_zsh_default_shell() {
     if [ ! -f "/etc/passwd" ]; then
         mkpasswd > /etc/passwd
     fi
-
-    #TODO 修改/etc/passwd
 }
 
 set_zsh_default_shell
 
-# ********************************************************************
-echo 'done.'
+echo 'Done.'
+echo '****************************************************************'
 

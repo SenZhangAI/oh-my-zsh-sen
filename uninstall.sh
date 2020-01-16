@@ -11,17 +11,21 @@ if [ ! -d "$ZSH_CUSTOM" ]; then
   exit
 fi
 
+echo '****************************************************************'
 echo 'uninstall start...'
 
-echo ' - [plugin] remove'
+echo ' - [plugin]'
 rm -rf $ZSH_CUSTOM/plugins/*
 
-echo ' - [config]: sen.zshenv.zsh...'
-rm $ZSH_CUSTOM/sen.zshenv.zsh
+remove_config() {
+    echo " - [config]: $1"
+    rm $ZSH_CUSTOM/$1
+}
 
-echo ' - remove sen.zshrc.zsh...'
-rm $ZSH_CUSTOM/sen.zshrc.zsh
+remove_config env.zsh
+remove_config config.zsh
+remove_config functions.zsh
+remove_config tldr.complete.zsh
 
-echo ' - [theme]: sen_cyg.zsh-theme...'
-rm $ZSH_CUSTOM/themes/sen_cyg.zsh-theme
-echo 'done.'
+echo 'Done.'
+echo '****************************************************************'
