@@ -19,13 +19,14 @@ rm -rf $ZSH_CUSTOM/plugins/*
 
 remove_config() {
     echo " - [config]: $1"
-    rm $ZSH_CUSTOM/$1
+    rm -rf $ZSH_CUSTOM/$1
 }
 
 remove_config env.zsh
 remove_config config.zsh
 remove_config functions.zsh
 remove_config tldr.complete.zsh
+remove_config sen.zsh
 
 echo 'Done.'
 echo '****************************************************************'

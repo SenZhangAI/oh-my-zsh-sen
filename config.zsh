@@ -1,3 +1,5 @@
+ZSH_THEME="ys"
+
 HISTFILE=$ZSH/log/.zhistory
 
 HISTSIZE=1000

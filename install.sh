@@ -58,11 +58,19 @@ add_config config.zsh
 add_config functions.zsh
 add_config tldr.complete.zsh
 
+if [[ $# > 0 && $1 == 'sen' ]]; then
+    add_config sen.zsh
+fi
+
 # set plugins
 ## remove comments of leading '#'
 _plugins=$(sed '/^#.*/d' $INSTALLER_DIR/plugins.conf)
 ## combine multilines into single line
 plugins=$(echo $_plugins | perl -pe 's/\n//g') && unset _plugins
+
+if [[ $# > 0 && $1 == 'sen' ]]; then
+    plugins=$(echo "vi-mode $plugins")
+fi
 
 printf "\nSet plugins from [plugins.conf]\n"
 echo "plugins=("

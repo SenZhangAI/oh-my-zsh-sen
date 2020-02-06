@@ -4,15 +4,6 @@ export LANG=en_US.UTF-8
 #export LC_CTYPE="en_US.UTF-8"
 #export PYTHONSTARTUP=$HOME/.pythonrc.py
 
-#alias
-if which nvim>/dev/null 2>&1; then
-    alias vi='nvim'
-    export EDITOR='nvim'
-elif which vim>/dev/null 2>&1; then
-    alias vi='vim'
-    export EDITOR='vim'
-fi
-
 alias df='df -h'
 alias du='du -hs'
 alias ps='ps -ef'
@@ -70,33 +61,18 @@ fi
 #-S disables line wrapping. Side-scroll to see long lines.
 export LESS="-XRFS"
 
-export GO111MODULE=auto
-export GOPROXY=https://goproxy.io
-
 case $OSTYPE in
     cygwin*)
         alias ep='explorer'
-        # Go environment
-        export PATH=$PATH:/cygdrive/c/go/bin
-        GOBASEPATH="$HOME/GoWorkSpace"
-        GOPATH_WIN=`cygpath -a -w $GOBASEPATH`
-        GOBIN_WIN=`cygpath -a -w $GOBASEPATH/bin`
-        export GOPATH="$GOPATH_WIN"
-        export GOBIN="$GOBIN_WIN"
-        export PATH="$PATH:$GOBASEPATH/bin"
         # change cursor to blinking block
         echo -ne "\x1b[1 q"
         # start gdb
         export CYGWIN="$CYGWIN error_start=gdb -nw %1 %2"
         # generate core dump
         export CYGWIN="$CYGWIN error_start=dumper -d %1 %2"
-        ZSH_THEME="ys";;
+
+        ;;
     linux*)
-        # Go environment
-        [ -s "/usr/local/go" ] && export PATH=$PATH:/usr/local/go/bin
-        GOBASEPATH="$HOME/GoWorkSpace"
-        export GOPATH="$GOBASEPATH"
-        export PATH="$PATH:$GOBASEPATH/bin"
         # Virtual Terminal Emulator
         if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
             source /etc/profile.d/vte.sh
@@ -109,17 +85,12 @@ case $OSTYPE in
             export PATH=$JAVA_HOME/bin:$PATH
         fi
 
-        ZSH_THEME="ys";;
+        ;;
     darwin*)
         alias subl='open -a "Sublime Text"'
         alias code='open -a "Visual Studio Code"'
         alias MacDown='open -a MacDown'
         alias Typora='open -a Typora'
-        # Go environment
-        [ -s "/usr/local/go" ] && export PATH=$PATH:/usr/local/go/bin
-        GOBASEPATH="$HOME/GoWorkSpace"
-        export GOPATH="$GOBASEPATH"
-        export PATH="$PATH:$GOBASEPATH/bin"
         # Anaconda
         export PATH="$PATH:/anaconda3/bin"
         export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
@@ -128,10 +99,6 @@ case $OSTYPE in
         # export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-cask.git
         export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
         export HOMEBREW_NO_AUTO_UPDATE=true
-        ZSH_THEME="ys";;
+        ;;
 esac
 
-if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
-    SESSION_NAME="remotetmux"
-    tmux attach-session -t $SESSION_NAME || tmux new-session -s $SESSION_NAME
-fi
