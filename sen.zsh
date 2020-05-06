@@ -29,6 +29,11 @@ case $OSTYPE in
         GOBASEPATH="$HOME/GoWorkSpace"
         export GOPATH="$GOBASEPATH"
         export PATH="$PATH:$GOBASEPATH/bin"
+
+        if [ -d "/usr/local/maven" ]; then
+            MAVEN_HOME=/usr/local/maven
+            export PATH=$PATH:${MAVEN_HOME}/bin
+        fi
         ;;
     darwin*)
         # Go environment
