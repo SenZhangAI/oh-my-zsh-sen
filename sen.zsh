@@ -41,9 +41,6 @@ case $OSTYPE in
         GOBASEPATH="$HOME/GoWorkSpace"
         export GOPATH="$GOBASEPATH"
         export PATH="$PATH:$GOBASEPATH/bin"
-
-        export PATH="$PATH:$HOME/.jenv/bin"
-        eval "$(jenv init -)"
         ;;
 esac
 

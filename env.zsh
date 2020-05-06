@@ -101,7 +101,7 @@ case $OSTYPE in
         export HOMEBREW_NO_AUTO_UPDATE=true
 
         # https://sdkman.io/usage
-        [ -d "$HOME/.sdkman" ] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+        [ -d "$HOME/.sdkman" ] && alias sdk 'source "$HOME/.sdkman/bin/sdkman-init.sh" && sdk'
         ;;
 esac
 
