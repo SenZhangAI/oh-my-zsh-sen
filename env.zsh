@@ -24,7 +24,7 @@ alias cmakeDebug='cmake -DCMAKE_BUILD_TYPE=Debug'
 alias gskip='git update-index --skip-worktree'
 alias gunskip='git update-index --no-skip-worktree'
 
-#alias npm='npm --registry https://registry.npm.taobao.org --disturl=https://npm.taobao.org/dist'
+alias npm='npm --registry https://registry.npm.taobao.org --disturl=https://npm.taobao.org/dist'
 
 alias chef-init='eval "$(chef shell-init zsh)"'
 alias rvm-init='if [ -d $HOME/.rvm/scripts ]; then source $HOME/.rvm/scripts/rvm; else echo "$HOME/.rvm/scripts not found"; fi'
