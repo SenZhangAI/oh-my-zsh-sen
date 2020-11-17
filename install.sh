@@ -68,8 +68,11 @@ _plugins=$(sed '/^#.*/d' $INSTALLER_DIR/plugins.conf)
 ## combine multilines into single line
 plugins=$(echo $_plugins | perl -pe 's/\n//g') && unset _plugins
 
+## vi-mode is my favorite, so I will install it for myself
 if [[ $# > 0 && $1 == 'sen' ]]; then
-    plugins=$(echo "vi-mode $plugins")
+    if [[ ! $plugins =~ 'vi-mode' ]]; then
+        plugins="vi-mode "$plugins
+    fi
 fi
 
 printf "\nSet plugins from [plugins.conf]\n"
