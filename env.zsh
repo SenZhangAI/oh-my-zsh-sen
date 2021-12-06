@@ -102,6 +102,9 @@ case $OSTYPE in
 
         # https://sdkman.io/usage
         [ -d "$HOME/.sdkman" ] && alias sdk 'source "$HOME/.sdkman/bin/sdkman-init.sh" && sdk'
+
+        # MacTex
+        [ -f "/usr/libexec/path_helper" ] && eval "$(/usr/libexec/path_helper)"
         ;;
 esac
 
