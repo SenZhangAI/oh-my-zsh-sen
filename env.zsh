@@ -97,7 +97,7 @@ case $OSTYPE in
         export NVM_DIR=~/.nvm
         alias nvm-init='source $(brew --prefix nvm)/nvm.sh'
         # export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-cask.git
-        export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+        #export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
         export HOMEBREW_NO_AUTO_UPDATE=true
 
         # https://sdkman.io/usage
