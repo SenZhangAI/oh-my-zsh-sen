@@ -37,12 +37,12 @@ echo 'Install start...'
 
 if [ ! -d $ZSH_CUSTOM/plugins/zsh-syntax-highlighting ]; then
     echo ' + [plugin]: zsh-syntax-highlighting'
-    git clone --depth=1 git://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+    git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 fi
 
 if [ ! -d $ZSH_CUSTOM/plugins/zsh-autosuggestions ]; then
     echo ' + [plugin]: zsh-autosuggestions'
-    git clone --depth=1 git://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+    git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 fi
 
 echo ' + [plugin]: themes'
