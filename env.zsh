@@ -105,6 +105,9 @@ case $OSTYPE in
 
         # MacTex
         [ -f "/usr/libexec/path_helper" ] && eval "$(/usr/libexec/path_helper)"
+
+        #HomeBrew
+        [ -d "/opt/homebrew/bin" ] && export PATH="$PATH:/opt/homebrew/bin"
         ;;
 esac
 
