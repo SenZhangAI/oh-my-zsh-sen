@@ -4,6 +4,10 @@ export LANG=en_US.UTF-8
 #export LC_CTYPE="en_US.UTF-8"
 #export PYTHONSTARTUP=$HOME/.pythonrc.py
 
+function command_exists() {
+    command -v "$@" > /dev/null 2>&1
+}
+
 alias df='df -h'
 alias du='du -hs'
 alias ps='ps -ef'
@@ -93,9 +97,6 @@ case $OSTYPE in
         alias Typora='open -a Typora'
         # Anaconda
         export PATH="$PATH:/anaconda3/bin"
-        export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
-        export NVM_DIR=~/.nvm
-        alias nvm-init='source $(brew --prefix nvm)/nvm.sh'
         # export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-cask.git
         #export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
         export HOMEBREW_NO_AUTO_UPDATE=true
@@ -108,6 +109,14 @@ case $OSTYPE in
 
         #HomeBrew
         [ -d "/opt/homebrew/bin" ] && export PATH="$PATH:/opt/homebrew/bin"
+
+        if command_exists brew && [ -f "$(brew --prefix nvm)/nvm.sh" ] ; then
+            export NVM_DIR=~/.nvm
+            source $(brew --prefix nvm)/nvm.sh
+            export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
+            export NODE_OPTIONS=--openssl-legacy-provider
+        fi
+
         ;;
 esac
 
