@@ -28,7 +28,7 @@ alias cmakeDebug='cmake -DCMAKE_BUILD_TYPE=Debug'
 alias gskip='git update-index --skip-worktree'
 alias gunskip='git update-index --no-skip-worktree'
 
-alias npm='npm --registry https://registry.npm.taobao.org --disturl=https://npm.taobao.org/dist'
+#alias npm='npm --registry https://registry.npmjs.org/ --disturl=https://npm.taobao.org/dist'
 
 alias chef-init='eval "$(chef shell-init zsh)"'
 alias rvm-init='if [ -d $HOME/.rvm/scripts ]; then source $HOME/.rvm/scripts/rvm; else echo "$HOME/.rvm/scripts not found"; fi'
@@ -107,14 +107,19 @@ case $OSTYPE in
         # MacTex
         [ -f "/usr/libexec/path_helper" ] && eval "$(/usr/libexec/path_helper)"
 
+        [ -f "$HOME/.cargo/env" ] && source $HOME/.cargo/env
+
         #HomeBrew
         [ -d "/opt/homebrew/bin" ] && export PATH="$PATH:/opt/homebrew/bin"
 
         if command_exists brew && [ -f "$(brew --prefix nvm)/nvm.sh" ] ; then
             export NVM_DIR=~/.nvm
             source $(brew --prefix nvm)/nvm.sh
-            export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
+            #export NVM_NODEJS_ORG_MIRROR=http://npm.aliyun.com/mirrors/node
             export NODE_OPTIONS=--openssl-legacy-provider
+            npm cache clean --force
+            npm config set strict-ssl false
+            npm config set registry https://registry.npmjs.org/
         fi
 
         ;;
