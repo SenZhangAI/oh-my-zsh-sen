@@ -44,8 +44,8 @@ case $OSTYPE in
         ;;
 esac
 
-if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
-    SESSION_NAME="remotetmux"
-    tmux attach-session -t $SESSION_NAME || tmux new-session -s $SESSION_NAME
-fi
+#if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
+#    SESSION_NAME="remotetmux"
+#    tmux attach-session -t $SESSION_NAME || tmux new-session -s $SESSION_NAME
+#fi
 
