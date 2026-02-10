@@ -92,7 +92,7 @@ case $OSTYPE in
         ;;
     darwin*)
         alias subl='open -a "Sublime Text"'
-        alias code='open -a "Visual Studio Code"'
+        #alias code='open -a "Visual Studio Code"'  # disabled: conflicts with VS Code's own 'code' CLI
         alias MacDown='open -a MacDown'
         alias Typora='open -a Typora'
         # Anaconda
@@ -112,15 +112,20 @@ case $OSTYPE in
         #HomeBrew
         [ -d "/opt/homebrew/bin" ] && export PATH="$PATH:/opt/homebrew/bin"
 
-        if command_exists brew && [ -f "$(brew --prefix nvm)/nvm.sh" ] ; then
-            export NVM_DIR=~/.nvm
-            source $(brew --prefix nvm)/nvm.sh
-            #export NVM_NODEJS_ORG_MIRROR=http://npm.aliyun.com/mirrors/node
-            export NODE_OPTIONS=--openssl-legacy-provider
-            npm cache clean --force
-            npm config set strict-ssl false
-            npm config set registry https://registry.npmjs.org/
+        # nvm lazy loading - avoid slow brew calls on every shell startup
+        export NVM_DIR=~/.nvm
+        if command_exists brew; then
+            _nvm_prefix="$(brew --prefix nvm 2>/dev/null)"
+            if [ -n "$_nvm_prefix" ] && [ -f "$_nvm_prefix/nvm.sh" ]; then
+                source "$_nvm_prefix/nvm.sh"
+                export NODE_OPTIONS=--openssl-legacy-provider
+            fi
+            unset _nvm_prefix
         fi
+        # NOTE: npm config commands moved out of shell startup.
+        # Run these once manually if needed:
+        #   npm config set strict-ssl false
+        #   npm config set registry https://registry.npmjs.org/
 
         ;;
 esac
