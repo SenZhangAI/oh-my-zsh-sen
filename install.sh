@@ -73,6 +73,9 @@ if [[ $# > 0 && $1 == 'sen' ]]; then
     if [[ ! $plugins =~ 'vi-mode' ]]; then
         plugins="vi-mode "$plugins
     fi
+    # Prevent vi-mode from syncing kill ring to system clipboard (must be before source oh-my-zsh.sh)
+    grep -q 'VI_MODE_DISABLE_CLIPBOARD' $HOME/.zshrc \
+        || perl -i -pe 'print "VI_MODE_DISABLE_CLIPBOARD=true\n" if /^\s*source\s+\$ZSH\/oh-my-zsh\.sh/ && !$done++' $HOME/.zshrc
 fi
 
 printf "\nSet plugins from [plugins.conf]\n"
